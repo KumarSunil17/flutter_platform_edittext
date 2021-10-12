@@ -10,9 +10,9 @@ typedef void EditTextCreatedCallback(EditTextController controller);
 const String VIEW_TYPE = 'platformview.kumarsunil17.com/edittext_view';
 
 class PlatFormEditText extends StatelessWidget {
-  const PlatFormEditText({Key key, this.onEditTextCreated}) : super(key: key);
+  const PlatFormEditText({Key? key, this.onEditTextCreated}) : super(key: key);
 
-  final EditTextCreatedCallback onEditTextCreated;
+  final EditTextCreatedCallback? onEditTextCreated;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class PlatFormEditText extends StatelessWidget {
       if (onEditTextCreated == null) {
         return;
       }
-      onEditTextCreated(EditTextController(id));
+      onEditTextCreated?.call(EditTextController(id));
     }
 
     if (defaultTargetPlatform == TargetPlatform.android) {
