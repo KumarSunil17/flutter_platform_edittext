@@ -27,7 +27,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String _value = '';
 
-  EditTextController controller;
+  late EditTextController controller;
 
   void _resetValue() {
     setState(() {
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
             '$_value',
             style: Theme.of(context)
                 .textTheme
-                .headline4
+                .headline4!
                 .copyWith(color: Colors.black),
           ),
         ],

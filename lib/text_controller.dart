@@ -13,7 +13,8 @@ class EditTextController {
   }
 
   Future<String> getText() async {
-    return _channel.invokeMethod('getText');
+    final String res = await _channel.invokeMethod('getText');
+    return res;
   }
 
   Future<void> clearText() async {
